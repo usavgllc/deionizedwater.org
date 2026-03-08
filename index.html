@@ -44,8 +44,23 @@
         header {
             background-color: var(--secondary);
             color: var(--white);
-            padding: 2rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
         }
         
         nav {
@@ -185,7 +200,7 @@
             <li><strong>Anion Exchange:</strong> Removes negatively charged ions.</li>
             <li><strong>Mixed Bed Deionization:</strong> Uses both resins in a single column for the highest purity levels.</li>
         </ul>
-        <p>Understanding the "Purity Gap" is essential when choosing a deionization method. Many off-the-shelf DI systems can leave trace organic contaminants or bacteria if not properly maintained. Read more about <a href="https://astmwater.com/blog/purity-gap" data-testid="link-purity-gap">The Purity Gap in modern water systems</a>.</p>
+        <p>Understanding purification methods is essential when choosing the right deionization approach. Many off-the-shelf DI systems can leave trace organic contaminants or bacteria if not properly maintained. Read our <a href="https://astmwater.com/blog/purification-methods" data-testid="link-purification-methods">comparison of RO, DI, and distillation methods</a> to understand the differences.</p>
     </section>
 
     <section id="purity-grades">
@@ -231,6 +246,14 @@
     </section>
 </div>
 
+<div class="container">
+    <section style="background: linear-gradient(135deg, #34495e, #4682b4); color: white; text-align: center; padding: 3rem 2rem;">
+        <h2 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Ready for Certified Deionized Water?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9;">ASTM Water Solutions provides ASTM D1193 certified Type I and Type II deionized water with a Certificate of Analysis included in every shipment.</p>
+        <a href="https://astmwater.com/products" class="btn" style="background: #e74c3c; padding: 1rem 2.5rem; font-size: 1.1rem;" data-testid="button-shop-cta">Shop Certified DI Water</a>
+    </section>
+</div>
+
 <footer>
     <p>&copy; 2024 DeionizedWater.org - Independent Water Purity Resource</p>
     <p>Partnered with <a href="https://astmwater.com" data-testid="link-astmwater-footer">ASTM Water Solutions</a> for high-compliance needs.</p>
@@ -238,3 +261,4 @@
 
 </body>
 </html>
+
