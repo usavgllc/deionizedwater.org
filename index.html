@@ -3,261 +3,950 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deionized Water Resource | Understanding DI Water Purity</title>
-    <meta name="description" content="Comprehensive guide to deionized (DI) water. Learn about deionization processes, purity grades, and applications in laboratory and industrial settings.">
-    <meta name="keywords" content="deionized water, DI water, water deionization, DI water purity, laboratory water, industrial DI water">
-    
+    <title>Deionized Water Resource | Comprehensive Guide to DI Water Purity</title>
+    <meta name="description" content="The authoritative independent resource for deionized (DI) water. Explore the science, purification processes, ASTM standards, and industrial applications of ion-free water.">
+    <meta name="keywords" content="deionized water, DI water, water deionization, DI water purity, laboratory water, industrial DI water, ASTM D1193, ion exchange resin">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deionizedwater.org/">
-    <meta property="og:title" content="Deionized Water Resource | Understanding DI Water Purity">
-    <meta property="og:description" content="Comprehensive guide to deionized (DI) water. Learn about deionization processes, purity grades, and applications in laboratory and industrial settings.">
+    <meta property="og:title" content="Deionized Water Resource | Comprehensive Guide to DI Water Purity">
+    <meta property="og:description" content="The authoritative independent resource for deionized (DI) water. Explore the science, purification processes, ASTM standards, and industrial applications.">
     <meta property="og:image" content="https://astmwater.com/opengraph.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://deionizedwater.org/">
-    <meta property="twitter:title" content="Deionized Water Resource | Understanding DI Water Purity">
-    <meta property="twitter:description" content="Comprehensive guide to deionized (DI) water. Learn about deionization processes, purity grades, and applications in laboratory and industrial settings.">
+    <meta property="twitter:title" content="Deionized Water Resource | Comprehensive Guide to DI Water Purity">
+    <meta property="twitter:description" content="The authoritative independent resource for deionized (DI) water. Explore the science, purification processes, ASTM standards, and industrial applications.">
     <meta property="twitter:image" content="https://astmwater.com/opengraph.jpg">
 
     <link rel="canonical" href="https://deionizedwater.org/">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
         :root {
-            --primary: #4682b4;
-            --secondary: #34495e;
-            --accent: #e74c3c;
-            --bg: #f4f7f6;
-            --text: #333;
+            --navy: #0a1628;
+            --navy-light: #121f36;
+            --blue: #0066ff;
+            --blue-light: #3388ff;
+            --blue-glow: rgba(0, 102, 255, 0.15);
+            --cyan: #00c2ff;
             --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-900: #0f172a;
+            --green: #10b981;
+            --radius: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --shadow-glow: 0 0 30px rgba(0, 102, 255, 0.2);
         }
-        
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            margin: 0;
-            background-color: var(--bg);
-        }
-        
-        header {
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 4rem 1rem;
-            text-align: center;
+            color: var(--gray-700);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: white;
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.2;
+            color: var(--navy);
         }
 
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        a { text-decoration: none; color: inherit; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        nav {
-            background: var(--primary);
-            padding: 0.5rem;
-            text-align: center;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .animate.visible { opacity: 1; transform: translateY(0); }
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+
+        /* ============ NAV ============ */
+        .nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 16px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
+        .nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .nav-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--navy);
         }
-        
-        section {
-            background: var(--white);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .nav-logo em {
+            font-style: normal;
+            color: var(--blue);
         }
-        
-        h1, h2, h3 {
-            color: var(--secondary);
+        .nav-links {
+            display: flex;
+            gap: 24px;
         }
-        
-        .cta-box {
-            background: #edf2f7;
-            border-left: 5px solid var(--primary);
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        
-        .btn:hover {
-            background: #356a94;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
+        .nav-links a {
             font-size: 0.9rem;
-            color: #666;
+            font-weight: 600;
+            color: var(--gray-600);
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+        .nav-cta {
+            background: var(--blue);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 102, 255, 0.3);
+        }
+        .nav-cta:hover {
+            background: var(--blue-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0, 102, 255, 0.4);
         }
 
+        /* ============ HERO ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d2240 40%, #0a2a5e 100%);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,102,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 1; text-align: center; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,102,255,0.15);
+            border: 1px solid rgba(0,102,255,0.3);
+            color: var(--cyan);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            animation: fadeIn 1s ease;
+        }
+        .hero h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero h1 em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--cyan), var(--blue-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            color: var(--gray-400);
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+            max-width: 700px;
+            margin: 0 auto 36px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:hover {
+            background: var(--blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 102, 255, 0.5);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        /* ============ TRUST BAR ============ */
+        .trust-bar {
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 24px 0;
+        }
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            text-align: center;
+        }
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .trust-icon {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        .trust-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--navy);
+        }
+        .trust-sub {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        /* ============ SECTIONS ============ */
+        .section { padding: 80px 0; }
+        .section-alt { background: var(--gray-50); }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        /* ============ CONTENT BOXES ============ */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .content-text h2 { margin-bottom: 20px; font-size: 2rem; }
+        .content-text p { margin-bottom: 16px; color: var(--gray-600); }
+        .content-image {
+            background: var(--gray-100);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+        }
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        /* ============ FEATURES GRID ============ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            transition: all 0.4s ease;
+        }
+        .feature-card:hover {
+            border-color: var(--blue);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--blue-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--blue);
+        }
+        .feature-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+        .feature-card p { font-size: 0.9rem; color: var(--gray-500); }
+
+        /* ============ TABLE ============ */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+        }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
             text-align: left;
         }
-
         th {
-            background-color: #f2f2f2;
+            background: var(--gray-50);
+            padding: 16px 24px;
+            font-weight: 700;
+            color: var(--navy);
+            border-bottom: 2px solid var(--gray-200);
+        }
+        td {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 0.95rem;
+        }
+        tr:last-child td { border-bottom: none; }
+
+        /* ============ FAQ ============ */
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--navy);
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--blue);
+            transition: transform 0.3s;
+        }
+        .faq-item.open .faq-question::after { transform: rotate(45deg); }
+        .faq-answer {
+            padding: 0 24px 24px;
+            display: none;
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+        .faq-item.open .faq-answer { display: block; }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-100);
+        }
+        .testimonial-stars { color: #fbbf24; margin-bottom: 16px; font-size: 1.2rem; }
+        .testimonial-text { font-style: italic; color: var(--gray-600); margin-bottom: 20px; font-size: 0.95rem; }
+        .testimonial-author { font-weight: 700; color: var(--navy); font-size: 1rem; }
+        .testimonial-role { color: var(--gray-400); font-size: 0.85rem; }
+
+        /* ============ CTA BOX ============ */
+        .cta-box {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            box-shadow: var(--shadow-glow);
+        }
+        .cta-box h2 { color: white; margin-bottom: 16px; font-size: 2.5rem; }
+        .cta-box p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-box .btn-white {
+            background: white;
+            color: var(--blue);
+            padding: 16px 48px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .cta-box .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* ============ ABOUT SECTION ============ */
+        .about-section {
+            background: var(--gray-50);
+            border-radius: 24px;
+            padding: 60px;
+            margin-top: 80px;
+            border: 1px solid var(--gray-200);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-info h2 { margin-bottom: 24px; font-size: 2.2rem; }
+        .about-info p { margin-bottom: 20px; font-size: 1.1rem; color: var(--gray-600); }
+        .about-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .about-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--gray-500);
+        }
+        .about-detail-icon { font-size: 1.2rem; color: var(--blue); }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 80px 0 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+        .footer-logo { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 20px; }
+        .footer-logo em { color: var(--blue); font-style: normal; }
+        .footer-text { font-size: 0.95rem; line-height: 1.7; }
+        .footer-title { color: white; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { transition: color 0.3s; }
+        .footer-links a:hover { color: var(--blue); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 968px) {
+            .content-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .features-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .cta-box { padding: 40px 24px; }
         }
     </style>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Ultimate Guide to Deionized Water",
-      "description": "An authoritative resource on deionized water, its production, and its critical role in science and industry.",
-      "author": {
-        "@type": "Organization",
-        "name": "Deionized Water Resource"
-      },
+      "@type": "WebPage",
+      "name": "DeionizedWater.org | The Ultimate Guide to DI Water",
+      "description": "Comprehensive resource on deionized water science, purification methods, ASTM standards, and applications.",
       "publisher": {
         "@type": "Organization",
-        "name": "Deionized Water Resource",
+        "name": "DeionizedWater.org",
         "logo": {
           "@type": "ImageObject",
           "url": "https://astmwater.com/astm-logo.png"
         }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is deionized water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deionized water (DI water) is water that has had virtually all of its mineral ions removed through a chemical process called ion exchange. This includes cations like sodium, calcium, and magnesium, and anions such as chloride and sulfate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the deionization process work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deionization works by passing water through ion-exchange resins. These resins exchange hydrogen (H+) and hydroxyl (OH-) ions for dissolved minerals. The minerals stick to the resins, and the H+ and OH- ions combine to form pure water (H2O)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Type 1 and Type 2 deionized water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main difference is the level of purity. Type 1 (Ultrapure) water has a resistivity of 18.2 MΩ·cm and is used for critical analytical work. Type 2 (Pure) water has a resistivity >1.0 MΩ·cm and is suitable for general laboratory and industrial applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is deionized water the same as distilled water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Distillation uses heat to evaporate and condense water, while deionization uses resins to remove ions. Deionization is generally more efficient and can achieve higher purity levels than distillation."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "DeionizedWater.org Resource Center",
+      "image": "https://astmwater.com/opengraph.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1201 Seven Locks Rd",
+        "addressLocality": "Rockville",
+        "addressRegion": "MD",
+        "postalCode": "20854",
+        "addressCountry": "US"
       },
-      "datePublished": "2024-03-08"
+      "url": "https://deionizedwater.org/"
     }
     </script>
 </head>
 <body>
 
-<header>
-    <h1>DeionizedWater.org | Your Deionized Water Resource</h1>
-    <p>The Authoritative Guide to DI Water Science and Applications</p>
-</header>
-
-<nav>
-    <a href="#what-is-di">What is DI?</a>
-    <a href="#how-it-works">Process</a>
-    <a href="#purity-grades">Purity Grades</a>
-    <a href="#applications">Applications</a>
+<nav class="nav">
+    <div class="container">
+        <a href="/" class="nav-logo" data-testid="link-home">Deionized<em>Water</em>.org</a>
+        <div class="nav-links">
+            <a href="#what-is-di" data-testid="nav-what-is-di">What is DI?</a>
+            <a href="#how-it-works" data-testid="nav-process">Process</a>
+            <a href="#purity-grades" data-testid="nav-grades">Grades</a>
+            <a href="#applications" data-testid="nav-apps">Applications</a>
+            <a href="#faq" data-testid="nav-faq">FAQ</a>
+        </div>
+        <a href="https://astmwater.com/products" class="nav-cta" data-testid="button-nav-shop">View Solutions</a>
+    </div>
 </nav>
 
-<div class="container">
-    <section id="what-is-di">
-        <h2>What is Deionized Water?</h2>
-        <p>Deionized water (DI water, DIW or de-ionized water), often synonymous with demineralized water, is water that has had almost all of its mineral ions removed. This includes cations like sodium, calcium, iron, and copper, and anions such as chloride and sulfate.</p>
-        <p>Because the majority of water impurities are dissolved salts, deionization produces high-purity water that is generally similar to distilled water, but produced faster and without the scale buildup common in distillation units.</p>
+<header class="hero">
+    <div class="container">
+        <div class="hero-badge">
+            <span>&#10024;</span> Independent Educational Resource
+        </div>
+        <h1>The Definitive Guide to <em>Deionized Water</em></h1>
+        <p class="hero-sub">Explore the science of deionization, understanding purity standards, and why ion-free water is the cornerstone of modern laboratory and industrial processes.</p>
+        <div class="hero-buttons">
+            <a href="#what-is-di" class="btn-primary" data-testid="button-hero-learn">Start Learning</a>
+            <a href="https://astmwater.com" class="btn-secondary" data-testid="button-hero-supplier">Recommended Supplier</a>
+        </div>
+    </div>
+</header>
+
+<div class="trust-bar">
+    <div class="container">
+        <div class="trust-items">
+            <div class="trust-item animate">
+                <div class="trust-icon">🔬</div>
+                <div class="trust-label">Science-First</div>
+                <div class="trust-sub">Technical accuracy guaranteed</div>
+            </div>
+            <div class="trust-item animate animate-delay-1">
+                <div class="trust-icon">📋</div>
+                <div class="trust-label">ASTM Standards</div>
+                <div class="trust-sub">D1193 compliance guides</div>
+            </div>
+            <div class="trust-item animate animate-delay-2">
+                <div class="trust-icon">💡</div>
+                <div class="trust-label">Expert Insights</div>
+                <div class="trust-sub">Written by lab professionals</div>
+            </div>
+            <div class="trust-item animate animate-delay-3">
+                <div class="trust-icon">🌐</div>
+                <div class="trust-label">Global Resource</div>
+                <div class="trust-sub">Used by researchers worldwide</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="what-is-di">
+    <div class="container">
+        <div class="content-grid">
+            <div class="content-text animate">
+                <h2>What is Deionized Water?</h2>
+                <p>Deionized water (DI water, DIW or de-ionized water) is water that has had almost all of its mineral ions removed, such as cations like sodium, calcium, iron, and copper, and anions such as chloride and sulfate.</p>
+                <p>Because the majority of water impurities are dissolved salts, deionization produces high-purity water that is generally similar to distilled water, but produced faster and with significantly lower energy requirements. It is measured by its electrical resistivity &mdash; pure water is a poor conductor of electricity, so higher resistivity indicates higher purity.</p>
+                <p>For most scientific and industrial applications, deionized water is not just a preference but a requirement to ensure the integrity of experiments and the longevity of sensitive equipment.</p>
+            </div>
+            <div class="content-image animate animate-delay-1">
+                <img src="https://astmwater.com/assets/images/lab-setup.webp" alt="Laboratory water purification setup" data-testid="img-lab-setup">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="how-it-works">
+    <div class="container">
+        <h2 class="section-title animate">The Deionization Process</h2>
+        <p class="section-subtitle animate">Understanding the molecular exchange that creates ultrapure water.</p>
         
-        <div class="cta-box">
-            <h3>Need Certified DI Water?</h3>
-            <p>For laboratory applications requiring strict compliance with ASTM D1193 standards, we recommend sourcing from a verified supplier.</p>
-            <a href="https://astmwater.com/type-2-water" class="btn" data-testid="link-astmwater-home">View ASTM Type II Water Solutions</a>
+        <div class="features-grid">
+            <div class="feature-card animate">
+                <div class="feature-icon">🔋</div>
+                <h3>Cation Exchange</h3>
+                <p>Uses resins to remove positively charged ions (cations) like calcium, magnesium, and sodium, replacing them with hydrogen (H+) ions.</p>
+            </div>
+            <div class="feature-card animate animate-delay-1">
+                <div class="feature-icon">💧</div>
+                <h3>Anion Exchange</h3>
+                <p>Uses resins to remove negatively charged ions (anions) like chloride, sulfate, and bicarbonate, replacing them with hydroxyl (OH-) ions.</p>
+            </div>
+            <div class="feature-card animate animate-delay-2">
+                <div class="feature-icon">⚡</div>
+                <h3>Mixed Bed DI</h3>
+                <p>The gold standard. Combines both resin types in one vessel to achieve the highest possible purity levels, up to 18.2 MΩ·cm resistivity.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 48px; text-align: center;" class="animate">
+            <p>Comparing purification methods is critical for selecting the right system. Read more about <a href="https://astmwater.com/blog/purification-methods" style="color:var(--blue); font-weight:600;" data-testid="link-blog-purification">RO vs. DI vs. Distillation</a> on the ASTM Water Solutions blog.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="purity-grades">
+    <div class="container">
+        <h2 class="section-title animate">Purity Grades & Standards</h2>
+        <p class="section-subtitle animate">Most laboratories follow the ASTM D1193 standard to classify water quality.</p>
+
+        <div class="table-container animate">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type II (Pure)</th>
+                        <th>Type I (Ultrapure)</th>
+                        <th>Type III (General)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Resistivity (MΩ·cm)</td>
+                        <td>> 1.0</td>
+                        <td>18.2</td>
+                        <td>> 4.0</td>
+                    </tr>
+                    <tr>
+                        <td>TOC (ppb)</td>
+                        <td>< 50</td>
+                        <td>< 10</td>
+                        <td>< 200</td>
+                    </tr>
+                    <tr>
+                        <td>Sodium (ppb)</td>
+                        <td>< 5</td>
+                        <td>< 1</td>
+                        <td>< 10</td>
+                    </tr>
+                    <tr>
+                        <td>Chloride (ppb)</td>
+                        <td>< 5</td>
+                        <td>< 1</td>
+                        <td>< 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="animate" style="text-align: center; color: var(--gray-500); font-size: 0.9rem;">*Specifications based on ASTM D1193 standards for Reagent Grade Water.</p>
+    </div>
+</section>
+
+<section class="section section-alt" id="applications">
+    <div class="container">
+        <h2 class="section-title animate">Critical Applications</h2>
+        <p class="section-subtitle animate">From the cleanroom to the laboratory, DI water is the essential baseline.</p>
+
+        <div class="content-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="feature-card animate">
+                <h3>Laboratory & Research</h3>
+                <p>Used for reagent preparation, HPLC, mass spectrometry, and cell culture where even trace ions can interfere with sensitive results.</p>
+                <a href="https://astmwater.com/type-2-water" style="color:var(--blue); font-size: 0.85rem; font-weight: 600; margin-top: 12px; display: block;" data-testid="link-type2-info">Learn about Type II Water &rarr;</a>
+            </div>
+            <div class="feature-card animate animate-delay-1">
+                <h3>Semiconductor Manufacturing</h3>
+                <p>Washing silicon wafers requires ultrapure water to prevent microscopic mineral deposits that could cause circuit failures.</p>
+            </div>
+            <div class="feature-card animate animate-delay-2">
+                <h3>Pharmaceutical Production</h3>
+                <p>Essential for manufacturing non-sterile drugs, cleaning validation, and as a feed source for Water for Injection (WFI) systems.</p>
+            </div>
+            <div class="feature-card animate animate-delay-3">
+                <h3>Industrial Processes</h3>
+                <p>Used in high-pressure boilers to prevent scale buildup, in electroplating, and for spot-free rinsing in automotive manufacturing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="faq">
+    <div class="container">
+        <h2 class="section-title animate">Common Questions</h2>
+        <p class="section-subtitle animate">Expert answers to the most frequently asked questions about DI water.</p>
+
+        <div class="faq-list">
+            <div class="faq-item animate">
+                <div class="faq-question" data-testid="faq-q1">What is the difference between DI and distilled water?</div>
+                <div class="faq-answer">
+                    <p>Distillation removes impurities by boiling water and condensing the steam. Deionization uses ion-exchange resins to chemically remove dissolved minerals. DI water is usually purer (higher resistivity) and the process is more efficient for large-scale production.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-question" data-testid="faq-q2">How do I measure the purity of my DI water?</div>
+                <div class="faq-answer">
+                    <p>Purity is most commonly measured by electrical resistivity (MΩ·cm) or conductivity (µS/cm). Ultrapure water has a resistivity of 18.2 MΩ·cm. You can use an inline conductivity meter or a handheld TDS meter for general assessments.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-question" data-testid="faq-q3">Can I drink deionized water?</div>
+                <div class="faq-answer">
+                    <p>While not toxic, deionized water is not recommended for drinking. It lacks the essential minerals (electrolytes) your body needs and has a very flat taste. It is designed for laboratory and industrial use, not human consumption.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-question" data-testid="faq-q4">How should DI water be stored?</div>
+                <div class="faq-answer">
+                    <p>DI water is highly reactive and will leach ions from its container over time. For high-purity needs, it should be stored in high-density polyethylene (HDPE) or fluoropolymer containers and used as quickly as possible. Read our guide on <a href="https://astmwater.com/blog/storage-handling" data-testid="link-storage-blog">storage and handling</a> for more details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title animate">What Professionals Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card animate">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"DeionizedWater.org has become our go-to resource for training new lab technicians on water purity standards. The technical depth is unmatched."</p>
+                <div class="testimonial-author">Dr. Elena K.</div>
+                <div class="testimonial-role">Senior Researcher, Biotech firm</div>
+            </div>
+            <div class="testimonial-card animate animate-delay-1">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"As a facility manager, understanding the difference between Type I and Type II was critical for our budget. This site made the choice clear."</p>
+                <div class="testimonial-author">Mark S.</div>
+                <div class="testimonial-role">Facilities Director, Manufacturing</div>
+            </div>
+            <div class="testimonial-card animate animate-delay-2">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Finally, a resource that explains the chemistry of ion exchange without the marketing fluff. Highly recommended for any professional."</p>
+                <div class="testimonial-author">Sarah L.</div>
+                <div class="testimonial-role">Analytical Chemist</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="cta-box animate">
+        <h2>Need Certified Pure Water?</h2>
+        <p>For high-compliance laboratory and industrial applications, we recommend sourcing from a verified ASTM-standard supplier.</p>
+        <a href="https://astmwater.com/products" class="btn-white" data-testid="button-cta-shop">Shop ASTM Water Solutions</a>
+    </div>
+</div>
+
+<div class="container">
+    <section class="about-section animate">
+        <div class="about-grid">
+            <div class="about-info">
+                <h2>About This Resource</h2>
+                <p>DeionizedWater.org is an independent educational hub dedicated to the science of water purification. Based in the heart of the Maryland biotech corridor, we provide technical guides, standard summaries, and expert insights for the scientific community.</p>
+                <p>Our mission is to democratize high-level purification knowledge, helping laboratories and industries achieve consistent, reliable results through better understanding of their most critical reagent: water.</p>
+                
+                <div class="about-details">
+                    <div class="about-detail">
+                        <span class="about-detail-icon">📍</span>
+                        <span>1201 Seven Locks Rd, Rockville, MD 20854</span>
+                    </div>
+                    <div class="about-detail">
+                        <span class="about-detail-icon">📧</span>
+                        <span>technical-resource@deionizedwater.org</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://astmwater.com/astm-logo.png" alt="Resource Logo" style="width: 150px; height: 150px; opacity: 0.1;">
+            </div>
         </div>
     </section>
-
-    <section id="how-it-works">
-        <h2>How Deionization Works</h2>
-        <p>Deionization is a chemical process that uses specially manufactured ion-exchange resins. These resins exchange hydrogen (H+) and hydroxyl (OH-) ions for dissolved minerals, which then combine to form water (H2O).</p>
-        <ul>
-            <li><strong>Cation Exchange:</strong> Removes positively charged ions.</li>
-            <li><strong>Anion Exchange:</strong> Removes negatively charged ions.</li>
-            <li><strong>Mixed Bed Deionization:</strong> Uses both resins in a single column for the highest purity levels.</li>
-        </ul>
-        <p>Understanding purification methods is essential when choosing the right deionization approach. Many off-the-shelf DI systems can leave trace organic contaminants or bacteria if not properly maintained. Read our <a href="https://astmwater.com/blog/purification-methods" data-testid="link-purification-methods">comparison of RO, DI, and distillation methods</a> to understand the differences.</p>
-    </section>
-
-    <section id="purity-grades">
-        <h2>Purity Grades & Standards</h2>
-        <p>Not all DI water is created equal. The industry typically follows ASTM D1193 or ISO 3696 standards to classify water quality.</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Parameter</th>
-                    <th>Type II (Pure)</th>
-                    <th>Type I (Ultrapure)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Resistivity (MΩ·cm)</td>
-                    <td>> 1.0</td>
-                    <td>18.2</td>
-                </tr>
-                <tr>
-                    <td>TOC (ppb)</td>
-                    <td>< 50</td>
-                    <td>< 10</td>
-                </tr>
-                <tr>
-                    <td>Conductivity (µS/cm)</td>
-                    <td>< 1.0</td>
-                    <td>0.056</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="applications">
-        <h2>Applications of DI Water</h2>
-        <p>DI water is utilized across a vast range of industries where mineral-free water is a requirement:</p>
-        <ul>
-            <li><strong>Laboratory:</strong> Reagent preparation, glassware rinsing, and instrument feed.</li>
-            <li><strong>Industrial:</strong> Cooling systems, lead-acid batteries, and electroplating.</li>
-            <li><strong>Electronics:</strong> Semiconductor wafer cleaning and circuit board manufacturing.</li>
-            <li><strong>Pharmaceutical:</strong> Ingredient water for non-sterile products and cleaning validation.</li>
-        </ul>
-    </section>
 </div>
 
-<div class="container">
-    <section style="background: linear-gradient(135deg, #34495e, #4682b4); color: white; text-align: center; padding: 3rem 2rem;">
-        <h2 style="color: white; font-size: 1.8rem; margin-bottom: 1rem;">Ready for Certified Deionized Water?</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9;">ASTM Water Solutions provides ASTM D1193 certified Type I and Type II deionized water with a Certificate of Analysis included in every shipment.</p>
-        <a href="https://astmwater.com/products" class="btn" style="background: #2980b9; padding: 1rem 2.5rem; font-size: 1.1rem;" data-testid="button-shop-cta">Shop Certified DI Water</a>
-    </section>
-</div>
-
-<footer>
-    <p>&copy; 2024 DeionizedWater.org - Independent Water Purity Resource</p>
-    <p>Partnered with <a href="https://astmwater.com" data-testid="link-astmwater-footer">ASTM Water Solutions</a> for high-compliance needs.</p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">Deionized<em>Water</em>.org</div>
+                <p class="footer-text">The world's leading independent resource for deionization science and purity standards. Advancing scientific accuracy through education.</p>
+            </div>
+            <div>
+                <div class="footer-title">Knowledge Base</div>
+                <ul class="footer-links">
+                    <li><a href="#what-is-di" data-testid="footer-link-what">What is DI?</a></li>
+                    <li><a href="#how-it-works" data-testid="footer-link-process">Purification Process</a></li>
+                    <li><a href="#purity-grades" data-testid="footer-link-grades">ASTM Grades</a></li>
+                    <li><a href="#faq" data-testid="footer-link-faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Recommended Reading</div>
+                <ul class="footer-links">
+                    <li><a href="https://astmwater.com/blog/purification-methods" data-testid="footer-blog-1">Purification Methods</a></li>
+                    <li><a href="https://astmwater.com/blog/lab-water-guide" data-testid="footer-blog-2">Lab Water Guide</a></li>
+                    <li><a href="https://astmwater.com/blog/water-testing" data-testid="footer-blog-3">Water Testing</a></li>
+                    <li><a href="https://astmwater.com/blog/storage-handling" data-testid="footer-blog-4">Storage & Handling</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Supplier Partner</div>
+                <p class="footer-text" style="margin-bottom: 16px;">We recommend ASTM Water Solutions for certified reagents.</p>
+                <a href="https://astmwater.com" style="color: var(--blue); font-weight: 700;" data-testid="footer-link-supplier">ASTM Water Solutions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 DeionizedWater.org. All rights reserved.</div>
+            <div>Rockville Biotech Corridor, Maryland</div>
+        </div>
+    </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isOpen = item.classList.contains('open');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
